@@ -1,13 +1,22 @@
 import Card from '../ui/Card';
 import classes from './StudentItem.module.css';
 import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import GlobalContext from "../../pages/store/globalContext"
 
 function StudentItem(props) {
-  const router = useRouter();
+  const router = useRouter()
+  const globalCtx = useContext(GlobalContext)
 
   function showDetailsHandler() {
     router.push('/' + props.id);
   }
+
+  async function deleteHandler()  {
+    await globalCtx.updateGlobals({cmd: 'deleteStudent', newVal: props.meetingID})
+    globalCtx.updateGlobals({cmd: 'incMeetupCount'})
+    router.push('/');
+}
 
   return (
     <li className={classes.item}>
@@ -24,6 +33,7 @@ function StudentItem(props) {
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
+          <button onClick={deleteHandler}>Delete</button>
         </div>
       </Card>
     </li>

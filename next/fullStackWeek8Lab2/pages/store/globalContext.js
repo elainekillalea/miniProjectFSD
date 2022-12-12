@@ -51,6 +51,20 @@ export function GlobalContextProvider(props) {
                 newGlobals.students.push(command.newVal); return newGlobals
             })
         }
+        if (command.cmd == 'deleteStudent') {
+            const response = await fetch('/api/delete-student', {
+                method: 'DELETE',
+                body: JSON.stringify(command.newVal),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json(); // Should check here that it worked OK
+            setGlobals((previousGlobals) => {
+                const newGlobals = JSON.parse(JSON.stringify(previousGlobals))
+                newGlobals.students.push (command.newVal); return newGlobals
+            })
+        }
         console.log('editGlobalData ' + JSON.stringify(command))
         if (command.cmd == 'changeTheString') { // {cmd: 'changeTheString, newVal: 'the new text'}  // see react video 3:27:00
             setGlobals((previousGlobals) => { 
