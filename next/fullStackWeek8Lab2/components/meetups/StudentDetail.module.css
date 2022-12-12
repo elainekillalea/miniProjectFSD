@@ -1,0 +1,88 @@
+.detail {
+    text-align: center;
+}
+
+.detail img {
+    width: 100%;
+}
+
+
+.myProgress {
+    width: 100%;
+    background-color: #ececec;
+    border: 1px solid #706d6e;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+  }
+  
+  .myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  
+  .item {
+    margin: 1rem 0;
+  }
+  
+  .image {
+    display: flex;
+    width: 50%;
+    height: 15rem;
+    overflow: hidden;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+  }
+  
+  .image img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .flexcontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .content h3 {
+    font-size: 1rem;
+    color: #2c292b;
+  }
+  
+  .content h4 {
+    font-size: 1rem;
+    color: #2c292b;
+  }
+  
+  .actions {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    color:  #1a2920;
+    border: 1px solid #706d6e;
+    background-color: transparent;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #ffe2ed;
+  }
