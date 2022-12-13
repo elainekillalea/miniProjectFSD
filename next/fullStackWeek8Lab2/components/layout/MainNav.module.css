@@ -37,3 +37,29 @@
 .header a.active {
   color: white;
 }
+
+
+.MainNav nav ul li {
+  display: inline-block;
+  margin: 1.5vw;
+}
+
+.MainNav nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.MainNav .Mobilenav {
+  display: none;
+}
+
+@media (max-width: 990px){
+  .MainNav .Navigation {
+    display: none;
+  }
+
+  .MainNav .MobileNav{
+    display: flex;
+    background: grey;
+  }
+}

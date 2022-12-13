@@ -1,5 +1,3 @@
-// /api/new-meetup
-
 async function handler(req, res) { // can be called anything you like
   const response = await fetch('http://127.0.0.1:8000/saveStudent', {
     method: 'POST',
