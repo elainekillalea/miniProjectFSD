@@ -17,6 +17,17 @@ let studentSchema = new Schema({
 
 let students = oldMong.model('students', studentSchema);
 
+let blogSchema = new Schema({
+  blogId: String,
+  title: String,
+  image: String,
+  location: String,
+  details: String,
+  created: new Date().toISOString()
+}, { collection: 'blogs' });
+
+let blogs = oldMong.model('blogs', blogSchema);
+
 router.get('/', async function (req, res, next) {
   const students = await getStudents();
   res.render('index');

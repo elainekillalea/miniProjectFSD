@@ -1,16 +1,14 @@
-import classes from './MainNavigation.module.css'
-import Link from 'next/link'
+import classes from './MainNav.module.css'
 import HamMenu from "../generic/HamMenu"
-import HamMenuFAB from "../generic/HamMenuFAB"
-import Button from "../generic/Button"
 import { useContext, useState } from 'react'
 import GlobalContext from "../../pages/store/globalContext"
 import HamMenuContent from "./HamMenuContent"
 import { useRouter } from 'next/router'
+import Navigation from './Navigation'
+import MobileNav from './MobileNav'
 
-function MainNavigation() {
+function MainNav() {
   const globalCtx = useContext(GlobalContext)
-  let theCount = globalCtx.theGlobalObject.count
   const router = useRouter()
 
   function toggleMenuGC() {
@@ -26,23 +24,14 @@ function MainNavigation() {
  ]
 
   return (
-    <header className={classes.header}>
+    <div className={classes.MainNav}>
       <HamMenuContent contents={contents} />
       <HamMenu toggleMenuHide={() => toggleMenuGC()} />
-      <HamMenuFAB toggleMenuHide={() => toggleMenuHide()} />
       <div className={classes.logo}>MiniProj</div>
-      <nav>
-        <ul>
-          <li>
-            <Link href='/'>List</Link>
-          </li>
-          <li>
-            <Link href='/new-student'>New</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <Navigation />
+      <MobileNav />
+    </div>
   );
 }
 
-export default MainNavigation
+export default MainNav
